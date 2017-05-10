@@ -6,8 +6,18 @@ OpenFace
 https://github.com/TadasBaltrusaitis/OpenFace
 
 
+
+
+
 # Installation Ubuntu 14.04
 
+### General requirements 
+
+* OpenCV 3.2 and Python 2.7.13 on Ubuntu 14.04 x64
+* dlib-19.4/
+
+
+### Installation 
 ```
 cd
 git clone https://github.com/TadasBaltrusaitis/OpenFace.git
@@ -20,8 +30,7 @@ https://github.com/TadasBaltrusaitis/OpenFace/wiki/Unix-Installation
 
 
 
-
-Test it with
+### Testing
 ```
 ./FaceLandmarkVid -f "../../videos/changeLighting.wmv"
 ./FaceLandmarkVidMulti -f  "../../videos/multi_face.avi"
@@ -29,4 +38,4 @@ Test it with
 ./FaceLandmarkVidMulti -device /dev/video0
 ```
 
-<!-- ./bin/FeatureExtraction -rigid -verbose -f "../videos/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned -->
+To test <!-- ./bin/FeatureExtraction -rigid -verbose -f "../videos/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned -->
