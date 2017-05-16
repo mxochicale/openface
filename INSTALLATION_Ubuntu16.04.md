@@ -164,6 +164,10 @@ In file included from /usr/include/c++/5/bits/locale_conv.h:41:0,
 
 
 ### Testing
+
+pwd
+/home/map479/OpenFace/build/bin
+
 ```
 cd bin/
 ./FaceLandmarkVid -f "../../samples/changeLighting.wmv"
@@ -171,12 +175,16 @@ cd bin/
 ./FaceLandmarkVid -device /dev/video0
 ./FaceLandmarkVidMulti -device /dev/video0
 ```
+```
+./FeatureExtraction -rigid -verbose -f "../../samples/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned
+```
+
+
 
 :)  Wed 10 May 23:47:11 BST 2017 @bhamuk
 
 
 
-TODO  
-```
-./bin/FeatureExtraction -rigid -verbose -f "../videos/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned
-```
+ERROR./FeatureExtraction -rigid -verbose -device /dev/video0  -of "output_features/default.txt" -simalign output_features/aligned
+
+
