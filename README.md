@@ -1,15 +1,10 @@
 OpenFace
 ---
 
-[Main Source](https://github.com/TadasBaltrusaitis/OpenFace)
+[OpenFace](https://github.com/TadasBaltrusaitis/OpenFace) is a state-of-the art
+open source tool intended for facial landmark detection, head pose estimation,
+facial action unit recognition, and eye-gaze estimation.
 
-# Requirements
-
-It is suggested that following dependencies have to be installed to
-build OpenFace 0to avoid any dependencies issues in the installation:
-* Python 2.7.13
-* OpenCV 3.2
-* dlib-19.4
 
 # Installation
 [On Ubuntu14.04 x64](https://github.com/mxochicale/openface/blob/master/INSTALLATION_Ubuntu14.04.md)  

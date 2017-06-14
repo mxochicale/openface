@@ -7,13 +7,14 @@ OpenFace
 
 # Installation for  Ubuntu 14.04
 
-### Requirements in this order
-
-* Python 2.7.13
-* OpenCV 3.2 
+### Dependencies 
+It is suggested that following dependencies have to be installed to
+build OpenFace to avoid any dependencies issues in the installation:
+* Python 2.7.13  
+* OpenCV 3.2
 * dlib-19.4
 
-### Installation 
+### Installation
 ```
 cd
 git clone https://github.com/TadasBaltrusaitis/OpenFace.git
