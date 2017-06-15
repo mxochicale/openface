@@ -7,13 +7,9 @@ OpenFace
 
 # Installation for  Ubuntu 16.04
 
-### Dependencies 
+### Dependencies
 It is suggested that following dependencies have to be installed to
 build OpenFace to avoid any dependencies issues in the installation:
-
-* Python 2.7.13
-* OpenCV 3.2
-* dlib-19.4
 
 
 * Python 2.7.13
