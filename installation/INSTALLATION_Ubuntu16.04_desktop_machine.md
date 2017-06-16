@@ -618,7 +618,7 @@ In file included from /usr/include/c++/5/bits/locale_conv.h:41:0,
 
 
 ```
-cd bin/
+cd ~/OpenFace/build/bin
 ./FaceLandmarkVid -f "../../samples/changeLighting.wmv"
 ./FaceLandmarkVidMulti -f  "../../samples/multi_face.avi"
 ```
@@ -635,4 +635,4 @@ From the webcam. To exit, press Q key
 ```
 
 
-DONE :). Thu 15 Jun 22:50:19 BST 2017 @bhamuk
+DONE :). Thu 15 Jun 22:50:19 BST 2017 @UoB UK
