@@ -44,36 +44,9 @@ to be then used for the Feature Extraction Algorithm
 
 #####  Recording Video
 
-CMakeList.txt is added to the \exe\Recording\
-```
-#TBB library
-include_directories(${TBB_ROOT_DIR}/include)
-add_executable(Record Record.cpp)
-target_link_libraries(Record ${OpenCV_LIBS} ${Boost_LIBRARIES} ${TBB_LIBRARIES})
-install (TARGETS Record DESTINATION bin)
-```
-then
-"add_subdirectory(exe/Recording)" is added to CMakeList.txt
-
-This app is for windows to which, the following bugs have appeared.
-
-```
-[ 98%] Building CXX object exe/Recording/CMakeFiles/Record.dir/Record.cpp.o
-/home/map479/OpenFace/exe/Recording/Record.cpp:42:21: fatal error: windows.h: No such file or directory
-compilation terminated.
-```
-comment //#include <windows.h> on Record.cpp
+add "\exe\Recording\Record.cpp"
 
 
-
-Then, after some quick google search, a simple app was implemented to capture video.
-codecs play an importan role when recroding video for the data analysis, becarful with
-the codec that you use. For this experiment,
-CV_FOURCC'H','2','6','4'),and CV_FOURCC('D','I','V','X') work well.
-
-
-
-This is the  new  Record.cpp
 ```
 // http://stackoverflow.com/questions/24195926/opencv-write-webcam-output-to-avi-file
 
@@ -127,9 +100,10 @@ int main(int argc, char* argv[])
        oVideoWriter.write(frame); //writer the frame into the file
        imshow("MyVideo", frame); //show the frame in "MyVideo" window
 
-       if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+       //if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
+       if (waitKey(30) == 'q') //wait for 'q' key press for 30ms. If 'q' key is pressed, break loop
       {
-           cout << "esc key is pressed by user" << endl;
+           cout << "q key is pressed by user" << endl;
            break;
       }
    }
@@ -137,14 +111,51 @@ int main(int argc, char* argv[])
 
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+```
+
+
+CMakeList.txt is added to the \exe\Recording\
 
 ```
+#TBB library
+include_directories(${TBB_ROOT_DIR}/include)
+add_executable(Record Record.cpp)
+
+target_link_libraries(Record ${OpenCV_LIBS} ${Boost_LIBRARIES} ${TBB_LIBRARIES})
+install (TARGETS Record DESTINATION bin)
+```
+then
+"add_subdirectory(exe/Recording)" is added to CMakeList.txt in the main path
+
+
+
+re-build OpenFace
+
+```
+cd ~/OpenFace/build
+make
+```
+
+Some little issues when building Recording:
+
+
+```
+[ 98%] Building CXX object exe/Recording/CMakeFiles/Record.dir/Record.cpp.o
+/home/map479/OpenFace/exe/Recording/Record.cpp:42:21: fatal error: windows.h: No such file or directory
+compilation terminated.
+```
+comment //#include <windows.h> on Record.cpp
+
+Then, after some quick google search, a simple app was implemented to capture video.
+codecs play an importan role when recroding video for the data analysis, becareful with
+the codec that you use. For this experiment,
+CV_FOURCC'H','2','6','4'),and CV_FOURCC('D','I','V','X') work well.
 
 
 Then, you can record videos and extract features.
 
 
-in bin
+in /build/bin path
 
 ```
 ./Record
