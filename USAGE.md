@@ -44,12 +44,18 @@ to be then used for the Feature Extraction Algorithm
 
 #####  Recording Video
 
+
+
 add "\exe\Recording\Record.cpp"
+
+cd ~/OpenFace/exe/Recording/
+cp Record.cpp Record_original.cpp
+
+
 
 
 ```
 // http://stackoverflow.com/questions/24195926/opencv-write-webcam-output-to-avi-file
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "opencv2/highgui/highgui.hpp"
 #include <iostream>
@@ -116,16 +122,39 @@ int main(int argc, char* argv[])
 
 CMakeList.txt is added to the \exe\Recording\
 
+
 ```
+$ touch CMakeLists.txt
+```
+
+```
+$ gedit CMakeLists.txt
+
 #TBB library
 include_directories(${TBB_ROOT_DIR}/include)
 add_executable(Record Record.cpp)
-
 target_link_libraries(Record ${OpenCV_LIBS} ${Boost_LIBRARIES} ${TBB_LIBRARIES})
 install (TARGETS Record DESTINATION bin)
 ```
+
+
+I tried echo command but somehow something is missing when adding the lines
+```
+echo "include_directories(${TBB_ROOT_DIR}/include)" >> CMakeLists.txt
+echo "add_executable(Record Record.cpp)" >> CMakeLists.txt
+echo "target_link_libraries(Record ${OpenCV_LIBS} ${Boost_LIBRARIES} ${TBB_LIBRARIES})" >> CMakeLists.txt
+echo "install (TARGETS Record DESTINATION bin)" >> CMakeLists.txt
+```
+
+
 then
-"add_subdirectory(exe/Recording)" is added to CMakeList.txt in the main path
+cd ~/OpenFace
+
+
+gedit CMakeLists.txt and add in the # executables
+add_subdirectory(exe/Recording)
+
+or which ,for the time being, is not working "echo -e "add_subdirectory(exe/Recording)" >> CMakeLists.txt"
 
 
 
@@ -160,8 +189,24 @@ in /build/bin path
 ```
 ./Record
 ```
-to create out.avi and press ESC to finish the recording.
+to create out.avi and press Q key to finish the recording.
 Then, for the feature extraction run:
+
+
 ```
-./FeatureExtraction -rigid -verbose -f "out.avi" -of "output_videocapture/default.txt" -simalign output_videocapture/aligned
+cd ~/OpenFace/build/bin
+mkdir testing && cd testing
+.././Record   #[Q to exit]
+.././FaceLandmarkVid -f ../testing/out.avi -ov "flvid.avi"
+.././FeatureExtraction -rigid -verbose -f ../testing/out.avi -of "default.txt" -simalign ../testing/aligned
+```
+
+Play the FaceLandmarkVideo
+```
+cvlc --play-and-exit flvid.avi
+```
+
+delete testing path
+```
+cd .. && rm -rf testing
 ```

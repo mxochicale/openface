@@ -12,5 +12,5 @@ facial action unit recognition, and eye-gaze estimation.
 
 
 # TODO:
-* [install from this shell](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/install.sh)
 * [openface_ros](https://github.com/interaction-lab/openface_ros)
+* [install from this shell](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/install.sh)
