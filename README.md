@@ -7,10 +7,12 @@ facial action unit recognition, and eye-gaze estimation.
 
 
 # Installation
-[On Ubuntu14.04 x64](https://github.com/mxochicale/openface/blob/master/INSTALLATION_Ubuntu14.04.md)  
+[With ROS kinetic on Ubuntu16.04 x64](https://github.com/mxochicale/openface/blob/master/INSTALLATION_ROSKINETIC_Ubuntu16.04_desktop_machine.md)
 [On Ubuntu16.04 x64](https://github.com/mxochicale/openface/blob/master/INSTALLATION_Ubuntu16.04.md)  
+[On Ubuntu14.04 x64](https://github.com/mxochicale/openface/blob/master/INSTALLATION_Ubuntu14.04.md)  
+
 
 
 # TODO:
-* [openface_ros](https://github.com/interaction-lab/openface_ros)
-* [install from this shell](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/install.sh)
+* use rosbag for further analysis with OpenFace4ROS
+* [try to install from this shell in a testing machine](https://github.com/TadasBaltrusaitis/OpenFace/blob/master/install.sh)

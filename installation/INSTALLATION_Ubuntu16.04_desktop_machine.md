@@ -625,12 +625,14 @@ cd ~/OpenFace/build/bin
 
 From the webcam. To exit, press Q key
 ```
+cd ~/OpenFace/build/bin
 ./FaceLandmarkVid -device /dev/video0
 ./FaceLandmarkVidMulti -device /dev/video0
 ```
 
 
 ```
+cd ~/OpenFace/build/bin
 ./FeatureExtraction -rigid -verbose -f "../../samples/default.wmv" -of "output_features/default.txt" -simalign output_features/aligned
 ```
 
