@@ -278,9 +278,10 @@ CMake Error at openface_ros/CMakeLists.txt:28 (message):
 
 ```
 
-Install Open face with as
+Install Open face with
+```
 sudo make install
-
+```
 
 
 ## /usr/bin/ld: cannot find -lopenblas
@@ -299,6 +300,7 @@ make: *** [all] Error 2
 
 ```
 https://stackoverflow.com/questions/32353509/usr-bin-ld-cannot-find-lopenblas-error-in-caffe-compilation
+
 
 ```
 sudo apt-get install liblapack-dev liblapack3 libopenblas-base libopenblas-dev
