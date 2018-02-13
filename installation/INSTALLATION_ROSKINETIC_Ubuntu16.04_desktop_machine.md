@@ -278,7 +278,7 @@ CMake Error at openface_ros/CMakeLists.txt:28 (message):
 
 ```
 
-Install Open face with
+SOLUTION: Install Open face with
 ```
 sudo make install
 ```
@@ -297,11 +297,12 @@ CMakeFiles/Makefile2:4951: recipe for target 'openface_ros/CMakeFiles/openface_r
 make[1]: *** [openface_ros/CMakeFiles/openface_ros.dir/all] Error 2
 Makefile:138: recipe for target 'all' failed
 make: *** [all] Error 2
-
 ```
+
 https://stackoverflow.com/questions/32353509/usr-bin-ld-cannot-find-lopenblas-error-in-caffe-compilation
 
 
+SOLUTION: 
 ```
 sudo apt-get install liblapack-dev liblapack3 libopenblas-base libopenblas-dev
 ```       

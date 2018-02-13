@@ -1,8 +1,6 @@
 Collecting Data with OpenFace
 ---
 
-# TODO
-* create a shell script to run the scripts per participant and trial
 
 # Simple Example
 
