@@ -3,7 +3,7 @@ LogBOOK
 
 
 # TODO
-* [ ] record a video with OpenFace Data using rosbag
+* [ ] record a video (and audio if possible) with OpenFace Data using rosbag
 	(created:13FEB2015;sorted:?)
 
 
